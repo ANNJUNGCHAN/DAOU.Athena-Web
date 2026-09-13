@@ -1,5 +1,5 @@
 {
-  "github": "https://github.com/ANNJUNGCHAN/DAOU.Athena-Project.git",
-  "downloadForWindows": "https://drive.usercontent.google.com/download?id=1-IWxVy_VEa8Hh7RRt301l9R30G435Yt_&export=download&confirm=t",
-  "downloadForWindowsFile": "Athena-Setup-0.1.0-beta.4-x64.exe"
+  "github": "https://github.com/ANNJUNGCHAN/DAOU.Athena.git",
+  "downloadForWindows": "https://github.com/ANNJUNGCHAN/DAOU.Athena/releases/download/v0.1.0/Athena-Setup-0.1.0-x64.exe",
+  "downloadForWindowsFile": "Athena-Setup-0.1.0-x64.exe"
 }
