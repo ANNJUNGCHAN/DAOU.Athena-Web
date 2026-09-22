@@ -23,6 +23,7 @@
     "typeCheck": true
   },
   "ignorePatterns": [
+    "public/presentation/**",
     ".next/**",
     ".vinext/**",
     "out/**",
