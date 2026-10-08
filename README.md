@@ -9,6 +9,21 @@ npm run dev
 
 Node.js 22.13 이상이 필요합니다. 프로덕션 빌드는 `npm run build` 후 `npm start`입니다.
 
+## 의존성 보안 점검
+
+```bash
+npm ci
+node --experimental-strip-types --test lib/*.test.mjs
+npm run lint
+npx --no-install tsc --noEmit --incremental false
+npm run build
+npm audit
+```
+
+`package.json`의 override는 `vinext`가 고정한 `image-size`를 `2.0.4`로, `miniflare`가 고정한 `sharp`를 `0.35.5`로 올려 보안 수정 버전을 사용합니다. 상위 패키지가 해당 수정 버전을 포함하면 override를 다시 검토합니다.
+
+2026-10-08 기준 `braces`의 [GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)은 공개된 수정 버전이 없어 `npm audit`에 경고가 남습니다. 현재 확인된 사용 경로는 `vinext`의 빌드·개발 도구 및 `shadcn` CLI이며, 웹 앱은 `shadcn`의 CSS만 가져옵니다. HTTP 요청 처리 경로에서는 사용을 발견하지 못했지만 취약점 해결이나 전체 감사 통과를 의미하지 않습니다.
+
 ## 최종 발표 자료
 
 홈의 `15분 프레젠테이션`은 `public/presentation/paper-final.html`을 새 탭에서 엽니다.
